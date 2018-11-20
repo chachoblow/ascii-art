@@ -1,16 +1,7 @@
-import sys, getopt
+import sys
 from PIL import Image, ImageDraw, ImageFont
 
-inputfile = ''
-
-try:
-    opts, inputfile = getopt(argv, "i:", ["ifile="])
-except getopt.GetoptError:
-    print 'Error getting image file name.'
-    sys.exit(2)
-for opt, arg in opts:
-    if opt in ("-i", "--ifile"):
-        inputfile = arg
+inputfile = sys.argv[1]
 
 # Convert image into an Image object, resize, and create array for pixels.
 im = Image.open(inputfile)
