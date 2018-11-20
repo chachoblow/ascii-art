@@ -2,7 +2,7 @@
 
 Upload photos and have them converted to ascii art automatically.
 
-Simply download the ascii.py python script and then run the following command within the folder where asscii.py is located:
+Simply download the ascii.py python script and then run the following command within the folder where ascii.py is located:
 
 ```
 python ascii.py <path/to/image>
