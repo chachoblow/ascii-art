@@ -1,7 +1,19 @@
+import sys, getopt
 from PIL import Image, ImageDraw, ImageFont
 
+inputfile = ''
+
+try:
+    opts, inputfile = getopt(argv, "i:", ["ifile="])
+except getopt.GetoptError:
+    print 'Error getting image file name.'
+    sys.exit(2)
+for opt, arg in opts:
+    if opt in ("-i", "--ifile"):
+        inputfile = arg
+
 # Convert image into an Image object, resize, and create array for pixels.
-im = Image.open("neemz.jpg")
+im = Image.open(inputfile)
 im.resize((400, 300))
 imageAr = [[] for y in range(im.height)]
 
